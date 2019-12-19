@@ -11,21 +11,21 @@ import { EmojiesService } from 'src/app/services';
 })
 export class TableComponent implements OnInit {
 
-  @Input() emojies: EmojiModel[] = [];
-  @ContentChild(TemplateRef) templateRef: TemplateRef<EmojiModel>;
+  @Input() emojies: EmojiModel[] = [];  
+  @ContentChild(TemplateRef, {static: false}) templateRef: TemplateRef<EmojiModel>;
   columns = ['name', 'url', 'img', 'buttons'];
   pageNumber = 0;
   pageSize = 10;
 
-  get pagedEmojies() {
+  get emojiesSlised() {
     let start = this.pageNumber * this.pageSize;
     return this.emojies.slice(start, start + this.pageSize);
   }
 
 
-  page(p: PageEvent) {
-    this.pageSize = p.pageSize;
-    this.pageNumber = p.pageIndex;
+  page(page: PageEvent) {
+    this.pageSize = page.pageSize;
+    this.pageNumber = page.pageIndex;
   }
 
   constructor(private emojiesService: EmojiesService) { }
