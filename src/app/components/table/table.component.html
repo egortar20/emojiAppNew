@@ -1,0 +1,43 @@
+
+<input class="search" matInput placeholder="Поиск" [(ngModel)]="emojiesService.term">
+
+<div class="">
+    <table mat-table [dataSource]="pagedEmojies" fxFlexFill  class="table">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Имя</th>
+        <td mat-cell *matCellDef="let emoji">{{emoji.name}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="url">
+        <th mat-header-cell *matHeaderCellDef>Ссылка</th>
+        <td mat-cell *matCellDef="let emoji">
+          <a [href]="emoji.url" target="_blank">{{emoji.url}}</a>
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="img">
+        <th mat-header-cell *matHeaderCellDef>Превью</th>
+        <td mat-cell *matCellDef="let emoji">
+          <img [src]="emoji.url" [alt]="emoji.name" class="prew-img">
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="buttons">
+        <th mat-header-cell *matHeaderCellDef>Действия</th>
+        <td mat-cell *matCellDef="let emoji">
+            <div class="button-row">
+                <ng-template [ngTemplateOutlet]="templateRef" [ngTemplateOutletContext]="{$implicit: emoji}"></ng-template>
+            </div>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="columns"></tr>
+      <tr mat-row *matRowDef="let emoji; columns: columns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[10, 25, 50]"
+                   showFirstLastButtons
+                   [length]="emojies.length"
+                   (page)="page($event)"
+    ></mat-paginator>
+  </div>
+   

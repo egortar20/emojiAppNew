@@ -1,0 +1,9 @@
+<h1>Удаленные</h1>
+<app-table [emojies]="emojies">
+    <ng-template let-emoji>
+        <button (click)="restore(emoji)">
+            <mat-icon>restore</mat-icon>
+        </button>
+    </ng-template>
+    
+</app-table>

@@ -1,0 +1,13 @@
+<h1>Главная</h1>
+<app-table [emojies]="emojies">
+    <ng-template let-emoji>
+        <button (click)="delete(emoji)" class="delete">
+            <mat-icon>delete</mat-icon>
+        </button>
+        <button (click)="favorite(emoji)" class="favorite" [class.favorite_checked]="emoji.status == 3">
+            <mat-icon>star</mat-icon>
+        </button>
+
+    </ng-template>
+    
+</app-table>

@@ -1,0 +1,10 @@
+<div id="loading" *ngIf="loading">
+  Loading...
+</div>
+
+<ng-container *ngIf="!loading">
+  <div *ngIf="!loading" id="container">
+    <app-menu></app-menu>
+    <router-outlet></router-outlet>    
+  </div>
+</ng-container>
