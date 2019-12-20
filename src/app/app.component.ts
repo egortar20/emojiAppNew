@@ -11,7 +11,7 @@ import { EmojiesService } from './services';
 export class AppComponent implements OnInit  {
   loading = false;
 
-  constructor (private emojiesService: EmojiesService)
+  constructor (private emojiesService: EmojiesService){
   }
 
   //подгрузка с гитхаба
