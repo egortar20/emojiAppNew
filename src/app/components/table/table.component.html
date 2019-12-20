@@ -25,9 +25,7 @@
       <ng-container matColumnDef="buttons">
         <th mat-header-cell *matHeaderCellDef>Действия</th>
         <td mat-cell *matCellDef="let emoji">
-            <div class="button-row">
                 <ng-template [ngTemplateOutlet]="templateRef" [ngTemplateOutletContext]="{$implicit: emoji}"></ng-template>
-            </div>
         </td>
       </ng-container>
   
