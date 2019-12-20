@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmojiesService } from 'src/app/services';
 import { EmojiModel, EmojiStatus } from '../../models/emoji.model';
-import {Title} from '@angular/platform-browser';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,10 +14,6 @@ export class HomeComponent implements OnInit {
 
   }
 
-  //получаем список эмоджи
-  get emojies(){
-    return this.emojiesService.searchEmojies.filter(emoji => emoji.status !== EmojiStatus.Deleted);
-  }
 
   //в список удаленных
   delete(emoji: EmojiModel){

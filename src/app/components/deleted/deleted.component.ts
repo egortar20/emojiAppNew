@@ -9,10 +9,7 @@ import { EmojiModel, EmojiStatus } from '../../models/emoji.model';
 })
 export class DeletedComponent implements OnInit {
 
-  //получаем список удаленных эмоджи
-  get emojies(){
-    return this.emojiesService.searchEmojies.filter(emoji => emoji.status == EmojiStatus.Deleted);
-  }
+
 
   //восстановление
   restore(emoji: EmojiModel){

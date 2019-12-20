@@ -22,11 +22,7 @@ export class EmojiesService {
     this.storage = JSON.parse(LOCAL_STORAGE.getItem(LOCAL_STORAGE_KEY) || '{}');
   }
 
-  //Поиск эмоджи
-  get searchEmojies() {
-    return  this.emojies.filter(emoji => emoji.name.toLowerCase().includes(this.term.toLowerCase()));
-  }
-
+  
   //Загружаем эмоджи с серваера
   async getEmojies(): Promise<EmojiModel[]> {
     try {

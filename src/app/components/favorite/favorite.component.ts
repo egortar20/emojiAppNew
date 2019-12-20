@@ -10,10 +10,6 @@ import { EmojiModel, EmojiStatus } from '../../models/emoji.model';
 export class FavoriteComponent implements OnInit {
 
 
-  //получаем список любимых
-  get emojies(){
-    return this.emojiesService.searchEmojies.filter(emoji => emoji.status == EmojiStatus.Favorite);
-  }
 
   //удаляем из списка любимых 
   delete(emoji: EmojiModel){

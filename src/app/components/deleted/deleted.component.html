@@ -1,5 +1,5 @@
 <h1>Удаленные</h1>
-<app-table [emojies]="emojies">
+<app-table [emojies]="emojiesService.emojies | search:emojiesService.term | statusdel">
     <ng-template let-emoji>
         <button (click)="restore(emoji)">
             <mat-icon>restore</mat-icon>

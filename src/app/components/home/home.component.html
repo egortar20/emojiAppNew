@@ -1,5 +1,5 @@
 <h1>Главная</h1>
-<app-table [emojies]="emojies">
+<app-table [emojies]="emojiesService.emojies | search:emojiesService.term | statusall ">
     <ng-template let-emoji>
         <button (click)="delete(emoji)" class="delete">
             <mat-icon>delete</mat-icon>

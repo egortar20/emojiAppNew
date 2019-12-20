@@ -10,6 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, 
          MatSortModule, MatTableModule } from "@angular/material";
 import {MatIconModule} from '@angular/material/icon';
+import { SearchPipe } from './search.pipe';
+import { StatusAllPipe } from './status-all.pipe';
+import { StatusFavoritePipe } from './status-favorite.pipe';
+import { StatusDeletedPipe } from './status-deleted.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import {MatIconModule} from '@angular/material/icon';
     MenuComponent,
     DeletedComponent,
     FavoriteComponent,
-    TableComponent
+    TableComponent,
+    SearchPipe,
+    StatusAllPipe,
+    StatusFavoritePipe,
+    StatusDeletedPipe
   ],
   imports: [
     BrowserModule,
