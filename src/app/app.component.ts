@@ -15,13 +15,13 @@ export class AppComponent implements OnInit  {
   }
 
   //подгрузка с гитхаба
-  async loadEmojis() {
+  async loadEmojies() {
     this.loading = true;
     await this.emojiesService.getEmojies();
     this.loading = false;
   }
 
   ngOnInit(): void{
-    this.loadEmojis(); //обновляем список эмоджи при загрузке приложения
+    this.loadEmojies(); //обновляем список эмоджи при загрузке приложения
   }
 }
